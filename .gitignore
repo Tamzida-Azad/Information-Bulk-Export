@@ -56,3 +56,36 @@ Company*.csv
 
 node_modules/
 .cache/
+
+# Credentials & secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local-only identity / HIPAA-sensitive config (keep real names here)
+*.local
+*.local.*
+config.local.yaml
+config.local.json
+skill.local.yaml
+**/config.local.*
+**/skill.local.*
+
+# Browser sessions (Teams/Slack/portal logins)
+browser-profile/
+**/browser-profile/
+auth/
+**/auth/
+**/storageState*.json
+**/*cookies*
+
+# Runtime / client data (never publish)
+**/logs/
+*messages*.json
+*payload*.txt
+*.sqlite
+*.db
+**/exports/
+**/screenshots/
+*-snapshot.yml
