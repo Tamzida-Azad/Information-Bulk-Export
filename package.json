@@ -1,0 +1,29 @@
+{
+  "name": "eod-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scrape your Slack task updates and post a weekday EOD summary to a configured Slack channel",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "save-auth": "tsx src/save-auth.ts",
+    "generate-eod": "tsx src/eod.ts",
+    "generate-eod:dry": "tsx src/eod.ts --dry",
+    "generate-eod:headed": "tsx src/eod.ts --headed",
+    "generate-eod:force": "tsx src/eod.ts --headed --force",
+    "run-eod": "bash scripts/run-eod.sh",
+    "scheduler": "tsx src/scheduler.ts",
+    "register-task": "powershell -ExecutionPolicy Bypass -File ./scripts/register-task.ps1",
+    "test:parser": "tsx src/parser.test.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "node-cron": "^3.0.3",
+    "playwright": "^1.62.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
